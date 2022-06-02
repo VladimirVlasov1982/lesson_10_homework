@@ -37,18 +37,11 @@ def find_skills(skill) -> list[dict]:
 def format_candidate(candidates) -> str:
     """Форматирование списка кандидатов"""
     result = '<pre>'
-    if isinstance(candidates, dict):
+    for item in candidates:
         result += f"""
-        Имя кандидата - {candidates["name"]}
-        Позиция кандидата: {candidates["position"]}
-        Навыки: {candidates["skills"]}
+        Имя кандидата - {item["name"]}
+        Позиция кандидата: {item["position"]}
+        Навыки: {item["skills"]}
         """
-    else:
-        for item in candidates:
-            result += f"""
-            Имя кандидата - {item["name"]}
-            Позиция кандидата: {item["position"]}
-            Навыки: {item["skills"]}
-            """
     result += '</pre>'
     return result

@@ -18,7 +18,7 @@ def candidate_page(ind):
                <h3>Кандидат: {ind}</h3>
                <hr></hr>
                <img src="{find_candidates(ind)["picture"]}" align="left">
-               {format_candidate(find_candidates(ind))}
+               {format_candidate([find_candidates(ind)])}
                """
     return f"<h3>Такого кандидата нет</h3><hr></hr>"
 
@@ -38,4 +38,4 @@ def skills_page(skill):
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.2", port="8000")
+    app.run()
