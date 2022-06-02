@@ -8,15 +8,13 @@ def json_load() -> list[dict]:
     return data
 
 
-def find_candidates(ind) -> list[dict]:
+def find_candidates(ind) -> dict:
     """Поиск кандидатов по id"""
     data = json_load()
-    lst = []
     if 0 < ind <= len(data):
         for item in data:
             if item["id"] == ind:
-                lst.append(item)
-                return lst
+                return item
     else:
         return None
 
